@@ -191,7 +191,7 @@ public class GeoNames implements RecipeInterface {
             if(terms.isEmpty()) {
             	// try again without the search language specified - not the preference as this also returns matches on airport codes
             	System.err.println("No results, trying again without search language");
-                url = new URL(api + "search?name="+  match + "&username=" + user + "&type=rdf&lang=nl&featureClass=P&featureClass=PCLI");
+                url = new URL(api + "search?name="+  match + "&username=" + user + "&type=rdf&lang=nl&featureClass=P&featureClass=A");
                 System.err.println("DBG: = url["+url+"]");
                 res = Saxon.buildDocument(new StreamSource(url.toString()));
                 iter = Saxon.xpathIterator(res, "/rdf:RDF/gn:Feature",null, GeoNames.NAMESPACES);
